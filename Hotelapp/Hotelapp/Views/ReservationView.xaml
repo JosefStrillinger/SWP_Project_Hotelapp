@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hotelapp.Views.ReservationView"
+             Title="ReservationView">
+
+    <Grid RowDefinitions="4*, 2*, 2*, 2*, 2*, 2*, 4*" ColumnDefinitions="4*, 6*, 4*, 6*" Margin="30, 20, 50, 10">
+        <Label 
+            Text="Reservation" 
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            FontSize="Header"
+            FontAttributes="Bold"
+            Grid.Row="0" Grid.Column="0"/>
+
+        <Label 
+            Text="Startdate"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="1" Grid.Column="0"/>
+        <DatePicker
+            Date="{Binding Startdate}"            
+            Grid.Row="1" Grid.Column="1"
+            VerticalOptions="Center"    />
+
+        <Label 
+            Text="Enddate"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="2" Grid.Column="0"/>
+        <DatePicker
+            Date="{Binding Enddate}"            
+            Grid.Row="2" Grid.Column="1"
+            VerticalOptions="Center"    />
+
+        <Label 
+            Text="Rooms"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="3" Grid.Column="0"/>
+        <Picker
+            ItemsSource="{Binding RoomItems}"
+            SelectedIndex="{Binding RoomSel}"
+            Grid.Row="3" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Guests"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="4" Grid.Column="0"/>
+        <Picker
+            ItemsSource="{Binding GuestItems}"
+            SelectedIndex="{Binding GuestSel}"
+            Grid.Row="4" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Bill"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="5" Grid.Column="0"/>
+        <Picker
+            ItemsSource="{Binding BillItems}"
+            SelectedIndex="{Binding BillSel}"
+            Grid.Row="5" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+        <Button
+            x:Name="CreateReservationBtn"
+            Text="Create Reservation"
+            SemanticProperties.Hint="Button to send the input data to create a Reservation"
+            Command="{Binding CmdReservation}"
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"
+            Grid.ColumnSpan="2"
+            Grid.Row="6" Grid.Column="0"/>
+    </Grid>
+</ContentPage>

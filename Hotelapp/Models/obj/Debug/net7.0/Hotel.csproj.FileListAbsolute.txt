@@ -1,0 +1,12 @@
+C:\VSProjects\Hotelapp\Models\bin\Debug\net7.0\Hotel.deps.json
+C:\VSProjects\Hotelapp\Models\bin\Debug\net7.0\Hotel.dll
+C:\VSProjects\Hotelapp\Models\bin\Debug\net7.0\Hotel.pdb
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\Hotel.csproj.AssemblyReference.cache
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\Hotel.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\Hotel.AssemblyInfoInputs.cache
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\Hotel.AssemblyInfo.cs
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\Hotel.csproj.CoreCompileInputs.cache
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\Hotel.dll
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\refint\Hotel.dll
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\Hotel.pdb
+C:\VSProjects\Hotelapp\Models\obj\Debug\net7.0\ref\Hotel.dll

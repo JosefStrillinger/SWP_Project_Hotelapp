@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:Hotelapp.Models.Converters"
+             x:Class="Hotelapp.Views.RegisterView"
+             Title="RegisterView">
+
+    <ContentPage.Resources>
+        <!--definiere-->
+        <converter:GenderConverter x:Key="GenderConverter"/>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="4*, 2*, 2*, 2*, 2*, 2*, 4*" ColumnDefinitions="4*, 6*, 4*, 6*" Margin="30, 20, 50, 10">
+        <Label 
+            Text="Guestdata" 
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            FontSize="Header"
+            FontAttributes="Bold"
+            Grid.Row="0" Grid.Column="0"/>
+
+        <Label 
+            Text="Firstname"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="1" Grid.Column="0"/>
+        <Entry
+            Placeholder="Firstname"
+            Text="{Binding Firstname}"
+            Grid.Row="1" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Lastname"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="2" Grid.Column="0"/>
+        <Entry
+            Placeholder="Lastname"
+            Text="{Binding Lastname}"
+            Grid.Row="2" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Birthdate"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="3" Grid.Column="0"/>
+        <DatePicker
+            Date="{Binding Birthdate}"            
+            Grid.Row="3" Grid.Column="1"
+            VerticalOptions="Center"    />
+
+        <Label 
+            Text="EMail"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="4" Grid.Column="0"/>
+        <Entry
+            Placeholder="EMail"
+            Text="{Binding EMail}"
+            Grid.Row="4" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Gender"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="5" Grid.Column="0"/>
+        <Picker
+            ItemsSource="{Binding GenderItems}"
+            SelectedIndex="{Binding Gender, Converter={StaticResource GenderConverter}}"
+            Grid.Row="5" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Addressdata" 
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            FontSize="Header"
+            FontAttributes="Bold"
+            Grid.Row="0" Grid.Column="3"/>
+
+        <Label 
+            Text="Country"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="1" Grid.Column="3"/>
+        <Entry
+            Placeholder="Country"
+            Text="{Binding Country}"
+            Grid.Row="1" Grid.Column="4"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Postal - Code"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="2" Grid.Column="3"/>
+        <Entry
+            Placeholder="Postal Code"
+            Text="{Binding PostalCode}"
+            Grid.Row="2" Grid.Column="4"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="City"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="3" Grid.Column="3"/>
+        <Entry
+            Placeholder="City"
+            Text="{Binding City}"
+            Grid.Row="3" Grid.Column="4"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Street"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="4" Grid.Column="3"/>
+        <Entry
+            Placeholder="Street"
+            Text="{Binding Street}"
+            Grid.Row="4" Grid.Column="4"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="House Number"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="5" Grid.Column="3"/>
+        <Entry
+            Placeholder="House Number"
+            Text="{Binding HouseNumber}"
+            Grid.Row="5" Grid.Column="4"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Button
+            x:Name="CreateUserBtn"
+            Text="Create User"
+            SemanticProperties.Hint="Button to send the input data to create a user"
+            Command="{Binding CmdRegister}"
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"
+            Grid.ColumnSpan="2"
+            Grid.Row="6" Grid.Column="0"/>
+
+        
+
+    </Grid>
+</ContentPage>

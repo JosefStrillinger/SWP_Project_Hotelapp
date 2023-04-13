@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:Hotelapp.Models.Converters"
+             x:Class="Hotelapp.Views.BillView"
+             Title="BillView">
+
+    <ContentPage.Resources>
+        <!--definiere-->
+        <converter:PaymentMethodConverter x:Key="PaymentMethodConverter"/>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="4*, 2*, 2*, 2*, 2*, 2*, 2*, 4*" ColumnDefinitions="4*, 6*, 4*, 6*" Margin="30, 20, 50, 10">
+        <Label 
+            Text="Bill" 
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            FontSize="Header"
+            FontAttributes="Bold"
+            Grid.Row="0" Grid.Column="0"/>
+
+        <Label 
+            Text="Payed"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="1" Grid.Column="0"/>
+        <Entry
+            Text="{Binding Payed}"            
+            Grid.Row="1" Grid.Column="1"
+            VerticalOptions="Center"    />
+
+        <Label 
+            Text="PaymentTarget"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="2" Grid.Column="0"/>
+        <DatePicker
+            Date="{Binding PaymentTarget}"            
+            Grid.Row="2" Grid.Column="1"
+            VerticalOptions="Center"    />
+
+        <Label 
+            Text="Price"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="3" Grid.Column="0"/>
+        <Entry
+            Text="{Binding Price}"
+            Grid.Row="3" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Discount"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="4" Grid.Column="0"/>
+        <Entry
+            Text="{Binding Discount}"
+            Grid.Row="4" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Payment Method"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="5" Grid.Column="0"/>
+        <Picker
+            ItemsSource="{Binding PaymentMethods}"
+            SelectedIndex="{Binding PaymentMethod, Converter={StaticResource PaymentMethodConverter}}"
+            Grid.Row="5" Grid.Column="1"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Reservation" 
+            Grid.ColumnSpan="2"
+            HorizontalOptions="Center"
+            FontSize="Header"
+            FontAttributes="Bold"
+            Grid.Row="0" Grid.Column="2"/>
+
+        <Label 
+            Text="Guests"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="1" Grid.Column="2"/>
+        <Picker
+            ItemsSource="{Binding GuestItems}"
+            SelectedIndex="{Binding GuestSel}"
+            Grid.Row="1" Grid.Column="3"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Label 
+            Text="Startdate"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="2" Grid.Column="2"/>
+        <DatePicker
+            Date="{Binding Startdate}"            
+            Grid.Row="2" Grid.Column="3"
+            VerticalOptions="Center"    />
+
+        <Label 
+            Text="Enddate"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="3" Grid.Column="2"/>
+        <DatePicker
+            Date="{Binding Enddate}"            
+            Grid.Row="3" Grid.Column="3"
+            VerticalOptions="Center"    />
+
+        <Label 
+            Text="Rooms"
+            VerticalOptions="Center" 
+            HorizontalOptions="End"
+            Margin="15"
+            Grid.Row="4" Grid.Column="2"/>
+        <Picker
+            ItemsSource="{Binding RoomItems}"
+            SelectedIndex="{Binding RoomSel}"
+            Grid.Row="4" Grid.Column="3"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"/>
+
+        <Button
+            x:Name="CreateBillButton"
+            Text="Create Bill"
+            SemanticProperties.Hint="Button to send the input data to create a Bill"
+            Command="{Binding CmdBillCreate}"
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"
+            Grid.ColumnSpan="2"
+            Grid.Row="7" Grid.Column="0"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Hotelapp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Hotelapp.Views"
+    >
+
+    <FlyoutItem Title="Main Page">
+        <Tab>
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="MainPage" />
+        </Tab>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Room Management">
+        <Tab>
+            <ShellContent
+                Title="Room Management"
+                ContentTemplate="{DataTemplate views:RoomView}"
+                Route="RoomView" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Guest Registration">
+        <Tab>
+            <ShellContent
+                Title="Guest Registration"
+                ContentTemplate="{DataTemplate views:RegisterView}"
+                Route="RegisterView" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Reservation">
+        <Tab>
+            <ShellContent
+                Title="Reservation"
+                ContentTemplate="{DataTemplate views:ReservationView}"
+                Route="ReservationView" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Bill">
+        <Tab>
+            <ShellContent
+                Title="Bill"
+                ContentTemplate="{DataTemplate views:BillView}"
+                Route="BillView" />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>
